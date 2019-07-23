@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Media Queries</title>
+    <style>
+        h1{
+            font-family: "Comic Sans MS",sans-serif;
+            color: white;
+            text-align: center;
+        }
+        div h2{
+            font-family: "Comic Sans MS",sans-serif;
+            color: white;
+            text-align: center;
+            display: none;
+        }
+        img{
+            width: 100%;
+        }
+        p{
+            font-family: "Comic Sans MS",sans-serif;
+            color: white;
+        }
+
+        /* -------------- Mobile Devices ------------ */
+        @media (max-width: 500px) {
+            body{
+                background: linear-gradient(45deg,black,red);
+            }
+            div h2:nth-child(1){
+                display: block;
+                font-family: "Old English Text MT",sans-serif;
+            }
+            div p{
+                font-size: 18px;
+            }
+        }
+
+        /* -------------- Tablet Devices ------------ */
+        @media (min-width: 501px) and (max-width: 800px) {
+            body{
+                background: linear-gradient(45deg,black,blueviolet);
+            }
+            div h2:nth-child(2){
+                display: block;
+                font-family: Arial, sans-serif;
+            }
+            div p{
+                font-size: 20px;
+            }
+        }
+
+        /* -------------- Laptop / Desktop Devices ------------ */
+        @media (min-width: 801px) and (max-width: 1200px) {
+            body{
+                background: linear-gradient(45deg,black,limegreen);
+            }
+            div h2:nth-child(3){
+                display: block;
+                font-family: "Lucida Calligraphy",sans-serif;
+            }
+            div p{
+                 font-size: 25px;
+             }
+        }
+
+        /* -------------- x-Large Devices ------------ */
+        @media (min-width: 1201px){
+            body{
+                background: linear-gradient(45deg,black,yellow);
+            }
+            div h2:nth-child(4){
+                display: block;
+                font-family: "Lucida Console",monospace;
+            }
+            div p{
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Screen size : <span></span></h1>
+    <div>
+        <h2>Mobile Screen</h2>
+        <h2>Tablet Screen</h2>
+        <h2>Laptop / Desktop Screen</h2>
+        <h2>X-Large Screen</h2>
+        <img src="img/image4.jpeg">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad alias architecto aspernatur aut deleniti dolor doloribus dolorum earum enim esse ex exercitationem explicabo impedit ipsam, ipsum labore minus mollitia natus, necessitatibus neque nihil nulla numquam perspiciatis quam quas quibusdam quis quisquam quos sapiente tempore ut vel voluptas voluptate voluptatum?</p>
+    </div>
+
+
+<!-- JavaScript Code -->
+<script>
+    window.addEventListener('resize',function() {
+       let screenSize = window.innerWidth;
+       document.querySelector('span').innerText = `${screenSize} px`;
+    });
+</script>
+</body>
+</html>
